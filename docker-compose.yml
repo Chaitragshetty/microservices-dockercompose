@@ -1,0 +1,27 @@
+version: "2"
+services:
+
+  eureka-server:
+    build: ./spring-eureka-server
+    network_mode: host
+    restart: always
+
+  api-server:
+    build: ./Zuul-Micro-Service
+    network_mode: host
+    restart: always
+
+  track-service:
+    build: ./TrackService
+    network_mode: host
+    restart: always
+
+  user-service:
+    build: ./UserService
+    network_mode: host
+    restart: always
+
+  config-server:
+    build: ./spring-config-server
+    network_mode: host
+    restart: always
